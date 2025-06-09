@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>スコア表示</title>
+  <style>
+    body {
+      text-align: center;
+      font-size: 3em;
+      margin-top: 20%;
+    }
+  </style>
+</head>
+<body>
+  <div id="score"></div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const score = params.get('score');
+    document.getElementById('score').textContent =
+      score !== null ? `スコア: ${score}` : "スコアがありません";
+  </script>
+</body>
+</html>
