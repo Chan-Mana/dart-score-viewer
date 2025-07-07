@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>ダーツスコア表示</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>得点を読み込み中…</h1>
+
+  <script>
+    // URLのクエリパラメータを取得
+    const params = new URLSearchParams(window.location.search);
+    const score = params.get('score');
+
+    if (score) {
+      // scoreがある場合、得点表示に置き換え
+      document.body.innerHTML = `<h1>あなたの得点は ${score} 点です！</h1>`;
+    } else {
+      // scoreパラメータがなければエラーメッセージ
+      document.body.innerHTML = `<h1>得点が見つかりません。</h1>`;
+    }
+  </script>
+</body>
+</html>
